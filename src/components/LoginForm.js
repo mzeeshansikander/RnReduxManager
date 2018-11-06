@@ -71,13 +71,6 @@ class LoginForm extends Component{
 
 
 }
-const mapStateToProps = ({auth}) =>{
-    const{ email, password , error,loading} = auth;
-    return {
-       email,password,error,loading
-
-    };
-};
 const styles={
     errorStyle:{
         fontSize: 20,
@@ -85,6 +78,14 @@ const styles={
         color: 'red'
     }
 }
+const mapStateToProps = ({auth}) =>{
+    const{ email, password , error,loading} = auth;
+    return {
+       email,password,error,loading
+
+    };
+};
+
 export default connect(mapStateToProps,{
     emailChanged,passwordChanged,loginUser
 })(LoginForm);
